@@ -3,7 +3,7 @@
 
 # HR Analytics Dashboard for Employee Attrition & Performance
 
-![HR Analytics Dashboard Banner](https://custom-icon-badges.demolab.com/badge/HR_Analytics-Dashboard-2563eb.svg?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMjU2M2ViIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0MCIgZmlsbD0id2hpdGUiPkggUiBBbmFseXRpY3MgRGFzaGJvYXJkPC90ZXh0Pjwvc3ZnPg==)
+![HR Analytics Dashboard Banner](https://raw.githubusercontent.com/logeshkannan19/HR-Analytics-Dashboard-for-Employee-Attrition-Performance/main/.github/images/banner.png)
 
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
