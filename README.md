@@ -83,59 +83,97 @@ This project delivers a comprehensive **end-to-end HR Analytics solution** desig
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ System Architecture
+
+### High-Level Architecture
+
+The system follows a **modular, layer-based architecture** that processes HR data from generation through to interactive visualization. Data flows sequentially through ingestion, processing, analytics, and visualization layers—each responsible for a specific stage of the data pipeline.
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                         HR ANALYTICS DASHBOARD ARCHITECTURE                      │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+    ┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+    │    DATA     │     │   DATA      │     │  ANALYTICS  │     │  DASHBOARD  │
+    │  INGESTION  │────►│ PROCESSING  │────►│    & ML     │────►│   LAYER     │
+    └─────────────┘     └─────────────┘     └─────────────┘     └─────────────┘
+         │                   │                   │                   │
+         ▼                   ▼                   ▼                   ▼
+   ┌───────────┐      ┌───────────┐      ┌───────────┐      ┌───────────┐
+   │ Generator │      │ Cleaning  │      │    EDA    │      │  Streamlit│
+   │   Script  │      │  Pipeline │      │  Notebooks │      │    App    │
+   └───────────┘      └───────────┘      └───────────┘      └───────────┘
+```
+
+---
+
+### Architecture Components
+
+| Layer | Description |
+|-------|-------------|
+| **Data Ingestion Layer** | Synthetic HR data generation with realistic employee attributes (demographics, job details, satisfaction scores, attrition labels) |
+| **Data Processing Layer** | Data cleaning, missing value imputation, feature engineering, and transformation into analysis-ready format |
+| **Analytics Layer** | Exploratory Data Analysis (EDA), statistical analysis, and machine learning model training for attrition prediction |
+| **Visualization Layer** | Interactive Streamlit dashboard with Plotly charts, KPI metrics, and real-time attrition risk prediction |
+
+---
+
+### Data Flow Pipeline
+
+```
+┌──────────────────┐     ┌──────────────────┐     ┌──────────────────┐
+│   Data Source   │────►│    Processing    │────►│   Analysis &     │
+│   (Synthetic)   │     │   (Pandas/SK)    │     │   Modeling       │
+└──────────────────┘     └──────────────────┘     └──────────────────┘
+                                                        │
+                                                        ▼
+                              ┌──────────────────┐     ┌──────────────────┐
+                              │    Cleaned CSV   │     │   Dashboard      │
+                              │   (data/)        │────►│   (Visualization)│
+                              └──────────────────┘     └──────────────────┘
+```
+
+---
+
+### Tech Stack by Layer
+
+| Layer | Technology | Purpose |
+|-------|------------|---------|
+| **Data Ingestion** | Python, NumPy | Generate 1,000+ synthetic employee records with realistic attributes |
+| **Data Processing** | Pandas, NumPy | Data cleaning, transformation, and feature engineering |
+| **Analytics** | Matplotlib, Seaborn, Plotly | Statistical analysis and interactive visualizations |
+| **Machine Learning** | scikit-learn | Logistic Regression & Decision Tree for attrition prediction |
+| **Visualization** | Streamlit, Plotly | Interactive dashboard with real-time insights |
+
+---
+
+### Key HR Analytics Features
+
+- **Attrition Rate Tracking** — Monitor overall and departmental turnover rates
+- **Demographic Analysis** — Break down attrition by age, gender, education, and department
+- **Compensation Insights** — Analyze salary distribution and its correlation with attrition
+- **Satisfaction Correlation** — Identify relationships between job satisfaction and turnover
+- **Tenure Risk Scoring** — Flag employees in high-risk tenure groups (< 2 years)
+- **Predictive Risk Calculator** — Real-time attrition probability based on employee attributes
+- **Departmental Insights** — Compare turnover patterns across departments and roles
+
+---
+
+### Project Structure
 
 ```
 HR-Analytics-Dashboard/
-│
-├── dashboard/                    # Streamlit web application
-│   └── app.py                    # Main dashboard entry point
-│
-├── data/                         # Data storage
-│   ├── raw_hr_data.csv          # Generated synthetic data
-│   └── cleaned_hr_data.csv      # Preprocessed data
-│
-├── notebooks/                    # Jupyter notebooks
-│   └── eda_attrition_analysis.ipynb   # EDA & model training
-│
-├── src/                          # Source code
-│   ├── data_generator.py        # Synthetic data generation
-│   ├── data_preprocessing.py    # Data cleaning & transformation
-│   └── create_notebook.py       # Notebook generator
-│
-├── tests/                        # Unit tests
-│   └── __init__.py
-│
-├── .github/workflows/            # CI/CD pipeline
-│   └── python-app.yml
-│
-├── Makefile                      # Automation tasks
-├── requirements.txt              # Python dependencies
-├── ARCHITECTURE.md               # Detailed architecture
-├── CONTRIBUTING.md               # Contribution guidelines
-├── LICENSE                       # MIT License
-└── README.md                     # This file
-```
-
-### Data Flow
-
-```
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  Data Generator │ ──► │  Preprocessing   │ ──► │  Cleaned Data   │
-│   (src/)        │     │     (src/)       │     │   (data/)       │
-└─────────────────┘     └──────────────────┘     └─────────────────┘
-                                                        │
-                                                        ▼
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│   EDA/Modeling  │ ◄── │  Model Training  │ ◄── │  Notebooks/     │
-│   (notebooks/)  │     │   (sklearn)      │     │  src/           │
-└─────────────────┘     └──────────────────┘     └─────────────────┘
-                                                        │
-                                                        ▼
-                        ┌──────────────────┐
-                        │  Streamlit App   │
-                        │   (dashboard/)   │
-                        └──────────────────┘
+├── dashboard/app.py          # Streamlit dashboard (Visualization Layer)
+├── data/                     # Processed data storage
+│   ├── raw_hr_data.csv
+│   └── cleaned_hr_data.csv
+├── notebooks/                # Analytics & ML notebooks (Analytics Layer)
+├── src/                      # Data pipeline scripts (Ingestion & Processing)
+│   ├── data_generator.py
+│   └── data_preprocessing.py
+├── tests/                    # Unit tests
+└── requirements.txt         # Dependencies
 ```
 
 ---
