@@ -14,6 +14,8 @@
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Stable-blue?style=flat)](#)
 [![Last Updated](https://img.shields.io/badge/Updated-April_2026-lightgrey?style=flat)](#)
+[![Stars](https://img.shields.io/github/stars/logeshkannan19/HR-Analytics-Dashboard-for-Employee-Attrition-Performance?style=social)](#)
+[![Forks](https://img.shields.io/github/forks/logeshkannan19/HR-Analytics-Dashboard-for-Employee-Attrition-Performance?style=social)](#)
 
 </div>
 
@@ -562,8 +564,11 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## 📞 Contact
 
-**Logesh Kannan**
-- GitHub: [@logeshkannan19](https://github.com/logeshkannan19)
+**Logesh Kannan**  
+[![GitHub](https://img.shields.io/badge/GitHub-logeshkannan19-181717?style=flat&logo=github)](https://github.com/logeshkannan19)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Logesh_Kannan-0077B5?style=flat&logo=linkedin)](https://linkedin.com/in/logeshkannan19)
+[![Email](https://img.shields.io/badge/Email-reachable via GitHub-333333?style=flat&logo=gmail)](#)
+
 - Project Link: [HR Analytics Dashboard](https://github.com/logeshkannan19/HR-Analytics-Dashboard-for-Employee-Attrition-Performance)
 
 ---
